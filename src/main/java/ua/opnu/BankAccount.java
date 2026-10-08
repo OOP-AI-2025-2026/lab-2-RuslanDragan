@@ -25,7 +25,7 @@ public class BankAccount {
 
 
     boolean transfer(BankAccount receiver, double amount) {
-        if (amount > 0 && balance >= amount + transactionFee) { // >= важливо
+        if (receiver != null && amount > 0 && balance >= amount + transactionFee) {
             balance -= amount + transactionFee;
             receiver.deposit(amount);
             return true;
